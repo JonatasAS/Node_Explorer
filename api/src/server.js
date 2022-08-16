@@ -1,10 +1,12 @@
 const express = require('express');
 
 const app = express();
+app.use(express.json());
 
 app.post("/users", (request, response) => {
-  
-  response.send("Você chamou o POST");
+  const { name, email, password } = request.body;
+  /* response.send(`Usuário: ${name} E-mail: ${email} Senha: ${password}` ); */
+  response.json({ name, email, password });
 });
 
 
