@@ -4,7 +4,7 @@ const usersRoutes = Router();
 
 const usersController = new UsersController();
 
-function myMiddleware(request, response, next) {
+/* function myMiddleware(request, response, next) {
     console.log("Você passou pelo Middleware");
 
     if (!request.body.isAdmin) {
@@ -12,8 +12,8 @@ function myMiddleware(request, response, next) {
     }
 
     next();
-}
+} */
 
-usersRoutes.post("/", myMiddleware, usersController.create);
+usersRoutes.post("/",  usersController.create);
 
 module.exports = usersRoutes;
